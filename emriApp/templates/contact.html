@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="container mt-5">
+    <h1 class="my-5 display-1">Contact us</h1>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <iframe class="w-100 h-100"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23969.32871827571!2d19.808256!3d41.327001599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x13503110a95ab631%3A0xa2c2c15c21446e60!2sTirana%20Castle!5e0!3m2!1sen!2s!4v1729784588121!5m2!1sen!2s"
+                style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col-12 col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                <div class="mb-3">
+                    <label for="emri" class="form-label">Emri</label>
+                    <input type="text" class="form-control" id="emri" name="firstName">
+                </div>
+                <div class="mb-3">
+                    <label for="mbiemri" class="form-label">Mbiemri</label>
+                    <input type="text" class="form-control" id="mbiemri" name="lastName">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="koment" class=" form-label">Koment</label>
+                    <textarea class="form-control" id="koment" rows="3" name="comment"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                    {% endfor %}
+            </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

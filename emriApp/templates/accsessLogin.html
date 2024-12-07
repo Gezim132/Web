@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static%}
+{% block title %} Access Login {% endblock %}
+{% block content %}
+<div class="container">
+{% if request.user.is_authenticated %}
+
+<h1>Hi,{{request.user.username}}</h1>
+{% else %}
+<h1>You can not access this page if you are not log-in</h1>
+{% endif %}
+</div>
+{% endblock %}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="image-container">
+    <img src="{% static 'images/img4.jpg.png' %}" class="d-block w-100" alt="...">
+</div>
+    
+<!-- Figure -->
+
+<figure class="figure">
+    <img src="{% static 'images/images1.jpg' %}" class="figure-img img-fluid rounded" alt="...">
+    <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
+  </figure>
+    
+<!-- Nis grid-->
+<div class="container my-5 pt-5">
+    <h1>Kategorite</h1>
+    <div class="row">
+        <!-- sm, md, lg, xl, xxl -->
+         {% for item in infoItem %}
+        <div class="col-12 col-md-6 col-lg-4 mb-5">
+            <div class="card">
+                <img src="{{item.item_image.url}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{item.item_name}}</h5>
+                    <i class="fa-regular fa-heart fs-1 text-danger"></i>
+                    <p class="card-text">{{item.item_description}}</p>
+                    <a href="{% url 'detailitemPage' item.pk %}" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+<!-- fund grid -->
+ <h2>Categories</h2>
+ <ul>
+    {% for cat in infoCategories %}
+    <li>{{cat.category_name}}</li>
+    {% endfor %}
+ </ul>
+<!-- -->
+<div class="container-fluid bg-primary">
+    <div class="row">
+        <div class="col-12 col-md-6 col-lg-8">
+            <!-- Carousel -->
+            <div id="carouselExampleIndicators" class="carousel slide">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{% static 'images/img1.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/img2.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{% static 'images/img3.jpg' %}" class="d-block w-100" alt="...">
+                    </div>
+                    
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+            <!-- text -->
+            <h1>Titull</h1>
+            <p>Kompania Collaku u themelua në 2024 dhe sot është lider në tregun e Shqipërisë dhe jashtë tij në fushën e arredimit. Për pak muaj vite, kompania Collaku ka ofruar zgjidhje cilësore me një gamë të gjerë të produkteve nga  marka ndërkombëtare. Misioni i tyre është të vazhdojnë këtë angazhim dhe sukses duke u përgjigjur nevojave të klientëve dhe partnerëve me seriozitet dhe qëndrueshmëri. Me një bashkëpunim me rreth 200 brande lider, kompania vazhdon të jetë referenca në tregun e pllakave, hidrosanitareve, mobiljeve dhe më shumë.</p>
+            <a href="">Learn more</a>
+        </div>
+    </div>
+</div>
+<!-- fund ushtrim -->
+
+{% endblock %}

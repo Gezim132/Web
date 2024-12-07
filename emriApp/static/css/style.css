@@ -1,0 +1,61 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1em;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(45deg, #ff0099 , #ffe100, #fc0000, #3801ff, #fdfdfe);
+    background-size: 400% 400%;
+    animation: gradient 10s ease infinite;
+}
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+.carousel-inner,
+.carousel-inner img {
+    height: 400px;
+    object-fit: cover;
+}
+
+.navbar-brand>img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+footer {
+    height: 100px;
+}
+
+.logo{
+    width: 200px;
+    height: 120px;
+    border-radius: 50%;
+}
+.carousel-item{
+    width: 1300px;
+    height: 200px;
+}
+
+
+.figure{
+    width: 60%;
+    height: 100px;
+    left: 10%;
+    top: 50%;
+}
+
+
